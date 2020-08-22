@@ -11,6 +11,7 @@ gem "haml-rails", "~> 2.0"
 gem 'webpacker', '~> 5.x'
 gem 'annotate'
 gem 'simple_form'
+gem 'devise'
 
 
 group :development, :test do
