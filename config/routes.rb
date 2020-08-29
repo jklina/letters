@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, skip: :all
+  devise_for :users
   resources :letters
   get 'home/index'
   root to: "home#index", as: :root
