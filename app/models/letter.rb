@@ -10,4 +10,6 @@
 #
 class Letter < ApplicationRecord
   validates :body, :title, presence: true
+
+  has_rich_text :body
 end
