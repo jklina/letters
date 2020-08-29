@@ -2,12 +2,14 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  host: localhost
+  host: db
+  database: trump_development
+  username: letters
+  password: password
   port: 5432
 
 development:
   <<: *default
-  database: trump_development
 
 test:
   <<: *default
