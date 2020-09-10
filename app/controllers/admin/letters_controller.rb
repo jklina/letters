@@ -28,6 +28,7 @@ class Admin::LettersController < ApplicationController
   def letter_params
     params.require(:letter).permit(
       :title,
+      :approved,
       :body,
     )
   end

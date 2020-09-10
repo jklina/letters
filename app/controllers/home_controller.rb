@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @letter = Letter.all
+    @letter = Letter.approved
   end
 end

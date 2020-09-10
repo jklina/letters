@@ -12,4 +12,8 @@ class Letter < ApplicationRecord
   validates :body, :title, presence: true
 
   has_rich_text :body
+
+  def self.approved
+    where(approved: true)
+  end
 end

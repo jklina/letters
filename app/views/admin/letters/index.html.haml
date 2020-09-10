@@ -5,6 +5,7 @@
       %tr
         %th Title
         %th Body
+        %th Approved
         %th Created At
         %th Manage
     %tbody
@@ -12,6 +13,7 @@
         %tr
           %td= letter.title
           %td= letter.body
+          %td= letter.approved
           %td= letter.created_at
           %td
             = link_to "Edit", edit_admin_letter_path(letter), class: "btn  btn-sm btn-primary"

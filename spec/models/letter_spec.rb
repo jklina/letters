@@ -3,6 +3,7 @@
 # Table name: letters
 #
 #  id         :bigint           not null, primary key
+#  approved   :boolean          default(FALSE), not null
 #  body       :text
 #  title      :string
 #  created_at :datetime         not null
