@@ -7,15 +7,12 @@
     = csp_meta_tag
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
-  %body
-    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %body.d-flex.flex-column{ style: "min-height:100vh;" }
+    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.mb-4.justify-content-between{ style: "flex 1 0 auto;" }
       = link_to "Home", root_path, class: "navbar-brand"
-      .collapse.navbar-collapse
-        %ul.navbar-nav.mr-auto
-          %li.nav-item
-            = link_to "Home", root_path, class: "nav-link"
-          %li.nav-item
-            = link_to "Submit Letter", new_letter_path, class: "nav-link"
+      %ul.navbar-nav
+        %li.nav-item
+          = link_to "Submit Letter", new_letter_path, class: "btn btn-primary"
     - if flash.any?
       - flash.to_hash.each do |key, value|
         - if key == "alert"
@@ -24,5 +21,8 @@
         - else
           .alert.alert-success
             .container-fluid= value
-
-    = yield
+    .container-fluid.flex-fill
+      = yield
+    %footer.footer.bg-dark.text-light
+      .container-fluid.mt-4
+        %p Some content here
