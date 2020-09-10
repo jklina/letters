@@ -8,11 +8,17 @@
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
   %body.d-flex.flex-column{ style: "min-height:100vh;" }
-    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.mb-4.justify-content-between{ style: "flex 1 0 auto;" }
+    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.justify-content-between{ style: "flex 1 0 auto;" }
       = link_to "Home", root_path, class: "navbar-brand"
       %ul.navbar-nav
-        %li.nav-item
-          = link_to "Submit Letter", new_letter_path, class: "btn btn-primary"
+        - if user_signed_in?
+          %li.nav-item.mr-2
+            = link_to "Manager Letters", admin_letters_path, class: "nav-link"
+          %li.nav-item.mr-2
+            = button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger"
+        - else
+          %li.nav-item
+            = link_to "Submit Letter", new_letter_path, class: "btn btn-primary"
     - if flash.any?
       - flash.to_hash.each do |key, value|
         - if key == "alert"
@@ -21,7 +27,7 @@
         - else
           .alert.alert-success
             .container-fluid= value
-    .container-fluid.flex-fill
+    .container-fluid.flex-fill.mt-4
       = yield
     %footer.footer.bg-dark.text-light
       .container-fluid.mt-4
