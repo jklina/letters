@@ -30,6 +30,7 @@ class Admin::LettersController < ApplicationController
       :title,
       :approved,
       :body,
+      :summary,
     )
   end
 end

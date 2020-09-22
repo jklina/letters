@@ -3,5 +3,6 @@
   = simple_form_for @letter, url: admin_letter_path(@letter) do |f|
     = f.input :title
     = f.input :approved
+    = f.input :summary
     = f.input :body, as: :rich_text_area
     = f.submit nil, class: "btn btn-primary"

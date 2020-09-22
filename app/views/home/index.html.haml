@@ -1,13 +1,24 @@
 .jumbotron
-  %h1.display-4 Blah
-  %p.lead Some content
-  %hr
-  %p Maybe some other stuff
-%h1 Letters
+  .row
+    .col-lg-8
+      %h1.display-4 The Trump Victory Speech Challenge
+      %p.lead Can you come up with a speech that is more absurd than the one Donald Trump will actually give on November 3rd?
+      %hr
+      %p We know that Donald Trump doesn’t care much about reality. He prefers his fantasy universe where everyone is prosperous and things are moving in the right direction to the real world where tens of millions were struggling to pay for their housing, health care, education, and child care even before the pandemic hit. Trump also prefers the fantasy world where we have the pandemic under control to the real world where more than 200,000 people in the United States have died from the coronavirus and our daily infection rate is higher than in April when we shut down the economy. 
+      %p He has already made clear that he intends to claim victory on Election Day, regardless of the outcome of the vote. He has decided that the votes against him aren’t real votes. Based on absolutely nothing he has declared that the mail in votes are fraudulent. This means that if he can find even a temporary lead on Election Day, he will declare victory.
+      %p This site is here to help Donald Trump. We know he has a hard time keeping good staff. Look at the number of people who have been fired or resigned from his administration. The top levels of his administration are filled with acting appointments, people who have not been approved by Congress.
+      %p Since Trump has such a hard time keeping good help, we thought he might have trouble with his victory speech. Therefore, we are crowdsourcing the process. We want people to draft their own Donald Trump victory speech. Do it for the country. Consider it a challenge – can you come up with a speech that is more absurd than the one Donald Trump will actually give on November 3rd?
+      %p.small (Warning: Speeches that contain racist, sexist, or ethnic slurs, or other crudely offensive language will not be posted.) 
+      = link_to "Submit Victory Speech!", new_letter_path, class: "btn btn-primary btn-lg"
+    .col-lg-4
+      = image_pack_tag "trump.jpg", class: "img-fluid"
+%h1 Speeches
+%p You'll be sick of all the winning!
 .row.row-cols-1.row-cols-md-3.mt-4
   - @letter.each do |letter|
     .col.mb-4
       .card
         .card-body
           %h4.card-title= letter.title
-          %p.card-text= letter.body
+          %p.card-text= letter.summary
+          = link_to "Hear the Winning!", letter_path(letter), class: "btn btn-primary"

@@ -5,6 +5,7 @@
 #  id         :bigint           not null, primary key
 #  approved   :boolean          default(FALSE), not null
 #  body       :text
+#  summary    :text
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

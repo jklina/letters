@@ -14,9 +14,13 @@ class LettersController < ApplicationController
     end
   end
 
+  def show
+    @letter = Letter.find(params[:id])
+  end
+
   private
 
   def letter_params
-    params.require(:letter).permit(:title, :body)
+    params.require(:letter).permit(:title, :body, :summary)
   end
 end
