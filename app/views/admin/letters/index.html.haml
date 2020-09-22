@@ -4,7 +4,7 @@
     %thead
       %tr
         %th Title
-        %th Body
+        %th Summary
         %th Approved
         %th Created At
         %th Manage
@@ -12,9 +12,9 @@
       - @letters.each do |letter|
         %tr
           %td= letter.title
-          %td= letter.body
+          %td= letter.summary
           %td= letter.approved
           %td= letter.created_at
           %td
-            = link_to "Edit", edit_admin_letter_path(letter), class: "btn  btn-sm btn-primary"
+            = link_to "View", edit_admin_letter_path(letter), class: "btn  btn-sm btn-primary"
             = button_to "Delete", admin_letter_path(letter), method: :delete, class: "btn btn-secondary btn-sm btn-danger", form_class: "d-inline"
