@@ -11,6 +11,8 @@
     %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.justify-content-between{ style: "flex 1 0 auto;" }
       = link_to "Home", root_path, class: "navbar-brand"
       %ul.navbar-nav
+        %li.nav-item.mr-2
+          = link_to "About", page_path("about"), class: "nav-link"
         - if user_signed_in?
           %li.nav-item.mr-2
             = link_to "Manage Speeches", admin_letters_path, class: "nav-link"

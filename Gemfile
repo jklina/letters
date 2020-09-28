@@ -13,6 +13,7 @@ gem 'annotate'
 gem 'simple_form'
 gem 'devise'
 gem 'tzinfo-data'
+gem 'high_voltage'
 
 
 group :development, :test do

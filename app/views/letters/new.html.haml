@@ -1,7 +1,12 @@
 .container-fluid
-  %h2.mt-4 Submit Letter
+  %h2.mt-4 Submit Speech
+  .card.text-white.bg-info.mb-3
+    .card-body
+      %p (Warning: Speeches that contain racist, sexist, or ethnic slurs, or other crudely offensive language will not be posted.)
   = simple_form_for @letter do |f|
+    = f.input :name, hint: "Only used to contact you if we think you have a good letter that just needs some minor tweaking."
+    = f.input :email, hint: "Only used to contact you if we think you have a good letter that just needs some minor tweaking."
     = f.input :title
-    = f.input :summary
+    = f.input :summary, hint: "This is the preview that will be displayed on the homepage."
     = f.input :body, as: :rich_text_area
-    = f.submit nil, class: "btn btn-primary"
+    = f.submit "Submit Speech", class: "btn btn-primary"
