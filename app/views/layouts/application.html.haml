@@ -5,6 +5,7 @@
     %title TrumpLetters
     = csrf_meta_tags
     = csp_meta_tag
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
   %body.d-flex.flex-column{ style: "min-height:100vh;" }
